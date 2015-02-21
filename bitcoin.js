@@ -65,8 +65,6 @@
 							(uitem.getElementsByClassName("sell"))[0].innerHTML = item.ask;
 							(uitem.getElementsByClassName("high"))[0].innerHTML = item.high;
 							(uitem.getElementsByClassName("low"))[0].innerHTML = item.low;
-						}
-						if(item != undefined){
 							if(cookie == null || cookie == undefined){
 									 cookie = JSON.stringify(processedData);
 							}
@@ -75,21 +73,17 @@
 							  cookie = eval(cookie);
 								// cookie = findANDsort(cookie, ['bitstamp','btce','bitfinex','bitex','coinmate','itbit','hitbtc','campbx']);
 								if(index < cookie.length){
-									(uitem.getElementsByClassName("buy"))[0].style.background = (cookie[index].bid < item.bid? green : (cookie[index].bid > item.bid?orange : blue));
+									var itembc = '(uitem.getElementsByClassName("buy"))[0].style.background = (cookie[index].bid < item.bid? green : (cookie[index].bid > item.bid?orange : blue))';
+									eval(itembc);
+									eval(itembc.replace('buy','sell'));
+									eval(itembc.replace('buy','high'));
+									eval(itembc.replace('buy','low'));
 									setTimeout(function(){
-										(uitem.getElementsByClassName("buy"))[0].style.background = blue;
-									},500);
-									(uitem.getElementsByClassName("sell"))[0].style.background = (cookie[index].ask < item.ask? green : (cookie[index].ask > item.ask?orange : blue));
-									setTimeout(function(){
-										(uitem.getElementsByClassName("sell"))[0].style.background = blue;
-									},500);
-									(uitem.getElementsByClassName("high"))[0].style.background = (cookie[index].high < item.high? green : (cookie[index].high > item.high?orange : blue));
-									setTimeout(function(){
-										(uitem.getElementsByClassName("high"))[0].style.background = blue;
-									},500);
-									(uitem.getElementsByClassName("low"))[0].style.background = (cookie[index].low < item.low? green : (cookie[index].low > item.low?orange : blue));
-									setTimeout(function(){
-										(uitem.getElementsByClassName("low"))[0].style.background = blue;
+										var itembc  = '(uitem.getElementsByClassName("buy"))[0].style.background = blue';
+										eval(itembc);
+										eval(itembc.replace('buy','sell'));
+										eval(itembc.replace('buy','high'));
+										eval(itembc.replace('buy','low'));
 									},500);
 								}
 							} catch(e){ console.log('This is the outer try catch block :' + e)}
