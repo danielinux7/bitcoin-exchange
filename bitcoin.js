@@ -96,6 +96,7 @@ function exchangeController(uitems){
 }
 // Here is the program entry point.
 HTMLCollection.prototype.forEach = Array.prototype.forEach;
+NodeList.prototype.forEach = Array.prototype.forEach;
 var items = document.getElementsByClassName('item');
 	// A fake cookie for now, Chrome doesn't allow cookies for local files.
 	var cookie = null;
