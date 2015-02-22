@@ -17,6 +17,11 @@ function findANDsort(items, symbols){
 		return [];
 	};
 }
+function drawCanvas(item, index){
+	var can = document.getElementsByClassName('canvas')[index];
+		var ctx = can.getContext('2d');
+
+}
 // Here is the service
 function exchangeService(resolve, reject) {
 	var xhr = new XMLHttpRequest();
@@ -79,6 +84,7 @@ function exchangeController(uitems){
 								}
 							} catch(e){ console.log('This is the outer try catch block :' + e)}
 						}
+						drawCanvas(item, index);
 					}
 				});
 }, function (reason) {
