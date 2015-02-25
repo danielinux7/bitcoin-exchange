@@ -1,0 +1,5 @@
+CACHE MANIFEST
+# V 0.1 02-25-15
+index.html
+bitcoin.js
+bitcoin.css
